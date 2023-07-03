@@ -1,0 +1,1 @@
+insert into user(empid,email,firstname,role,password) values ('admin','admin@xyz.com','admin','A','$2a$10$CZqA5IHs/7/d54yT8SEsPOKQ.0xiEPYJwO8ctG6yDgM28R80vj8D.');

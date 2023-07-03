@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE tiles-definitions PUBLIC  "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"  "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">  
+
+<tiles-definitions>  
+ 
+    <!-- Base Definition Login -->
+   <definition name="base-definition-login" template="/WEB-INF/views/tiles/layouts/defaultLoginLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
+   </definition> 
+   
+   <!-- Login Page -->
+   <definition name="login" extends="base-definition-login">
+       <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
+       <put-attribute name="title" value="Login Page" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/login.jsp" />
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
+   </definition>   
+ 
+   <!-- Base Definition -->
+   <definition name="base-definition" 
+       template="/WEB-INF/views/tiles/layouts/defaultLayout.jsp">  
+       <put-attribute name="title" value="" />  
+       <put-attribute name="header" value="/WEB-INF/views/tiles/template/defaultHeader.jsp" />  
+       <put-attribute name="menu" value="/WEB-INF/views/tiles/template/defaultMenu.jsp" />  
+       <put-attribute name="body" value="" />  
+       <put-attribute name="footer" value="/WEB-INF/views/tiles/template/defaultFooter.jsp" />  
+   </definition>  
+ 
+   <!-- Home Page -->
+   <definition name="home" extends="base-definition">  
+       <put-attribute name="title" value="Welcome" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/home.jsp" />  
+   </definition>  
+
+   <!-- User Page -->
+   <definition name="user" extends="base-definition">  
+       <put-attribute name="title" value="User" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/user.jsp" />  
+   </definition> 
+   
+   <!-- Project Page -->
+   <definition name="project" extends="base-definition">  
+       <put-attribute name="title" value="Project" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/project.jsp" />  
+   </definition>   
+   
+   <!-- Assign Project Page -->
+   <definition name="assign" extends="base-definition">  
+       <put-attribute name="title" value="Assign Project" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/assign.jsp" />  
+   </definition>  
+
+   <!-- Search Page -->
+   <definition name="search" extends="base-definition">  
+       <put-attribute name="title" value="Search" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/search.jsp" />  
+   </definition> 
+   
+   <!-- Search Result Page -->
+<!--    <definition name="searchresult" extends="base-definition">  
+       <put-attribute name="title" value="Search" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/result.jsp" />  
+   </definition> -->
+   
+   <!-- Attendance view Page -->
+   <definition name="attendance" extends="base-definition">  
+       <put-attribute name="title" value="Search" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/attendance.jsp" />  
+   </definition> 
+   
+   <!-- Report Page -->
+   <definition name="report" extends="base-definition">  
+       <put-attribute name="title" value="report" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/report.jsp" />  
+   </definition> 
+   
+   <!-- Project Status Report Page -->
+   <definition name="psreport" extends="base-definition">  
+       <put-attribute name="title" value="Project Status Report" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/statusreport.jsp" />  
+   </definition> 
+
+   
+   <!-- Upload Page -->
+   <definition name="upload" extends="base-definition">  
+       <put-attribute name="title" value="Data Upload" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/upload.jsp" />  
+   </definition>  
+   
+   <!-- Reset Password Page -->
+   <definition name="reset" extends="base-definition">  
+       <put-attribute name="title" value="Reset User Password" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/reset.jsp" />  
+   </definition>    
+   
+   <!-- Test Page -->
+   <definition name="test" extends="base-definition">  
+       <put-attribute name="title" value="Testing" />  
+       <put-attribute name="body" value="/WEB-INF/views/pages/test.jsp" />  
+   </definition>    
+ 
+</tiles-definitions>

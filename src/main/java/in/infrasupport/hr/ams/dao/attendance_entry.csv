@@ -1,0 +1,13 @@
+empId,firstName,pid,projectname,location_address,LAT,LON,ATT_DATE,ATT_TSP
+127,Harsha,2,pos,tumkur,34,56,2023-03-02,2023-04-09
+
+
+
+
+
+insert into user (empId,email,firstName,role,password) values (123,'hpk@gmail.com','Harsha','admin','PYbGrY8YXFwMMkCDftnOLeuA7hDmQOFSnluy3U3ixSnRN0OOLjLU2')
+
+
+$2a$10$IobByz6hH6AoJw.FvZFPT.7Kfped6S.uIA8qTVWj0cPag0.1ejf.a
+
+insert into user (empId,email,firstName,role,password) values (111,'harsha@gmail.com','King','A','$2a$10$IobByz6hH6AoJw.FvZFPT.7Kfped6S.uIA8qTVWj0cPag0.1ejf.a')

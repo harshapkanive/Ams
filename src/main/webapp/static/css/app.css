@@ -1,0 +1,110 @@
+html{
+	 background-color:#2F2F2F; 
+}
+
+body{
+	 height: 100%; 
+	 background-color:rgb(245, 245, 245); 
+}
+
+
+#header {
+    margin-left:0%;
+    top: 0px;
+    width: 100%;
+	height: 22%;
+	position: fixed;
+	font-family: 'bgMed',arial,helvetica,sans-serif;
+    font-size: 0.6em;
+    color: #fff;
+    z-index: 15;
+    text-transform: uppercase;
+    background-color: #587c8c;
+    border-bottom: 2px solid hsl(100,70%,55%);
+    padding-top:10px;
+    text-align:center;
+}
+
+/* #footer {
+	margin-left:0%;
+    left: 0px;
+    bottom: 0px;
+    width: 100%;
+	height: 5%;
+	position: fixed;
+	font-family: 'bgMed',arial,helvetica,sans-serif;
+    font-size: 0.8em;
+    color: #fff;
+    z-index: 15;
+    background-color: #587c8c;
+	padding-top:15px;   
+    text-align:center;
+} */
+
+
+#sidemenu {
+    width: 15%;
+    background-color:#587c8c;
+    height: 100%;
+    overflow: auto;
+    float: left;
+    z-index: 20;
+    position: fixed;
+    left: 0px;
+    margin-top:
+}
+
+#sidemenu #menu {
+    color: #fff;
+    text-align: right;
+    list-style-type: none;
+    margin-right: 40px;
+    float: right;
+}
+
+#sidemenu #menu li {
+    width: 150px;
+    height: 35px;
+    font-size: 1.2em;
+    padding-right:5px;
+}
+
+#sidemenu #menu li a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #fff;
+}
+
+#sidemenu #menu li:active{
+	border-left: 5px solid hsl(180,70%,55%);
+}
+
+#sidemenu #menu li:hover {
+    background-color: #635555;
+    border-left: 5px solid hsl(180,70%,55%);
+}
+
+.logo{
+	float:left;
+}
+
+/* .table-nonfluid {
+   width: auto !important;
+} */
+
+#site-content {
+	width:80%;
+	height:100%;
+	z-index: 10;
+	overflow: auto;
+	float : center;
+   /*  height: 100%; 
+    
+    float: left;*/
+    position: relative;
+    margin-top:10%;
+    margin-bottom:0%;
+    margin-left:20%;
+    padding-left:10px;
+}
+    
