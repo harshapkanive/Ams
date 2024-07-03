@@ -1,19 +1,19 @@
-package in.infrasupport.ams.test;
+// package in.infrasupport.ams.test;
 
-import in.infrasupport.hr.ams.util.DateUtil;
+// import in.infrasupport.hr.ams.util.DateUtil;
 
-public class TestDateUtil {
+// public class TestDateUtil {
 
-	public static void main(String[] args) {
-		String strDt = "12-11-2016 06:14:14 p.m";
-		//DateUtil.strToSQLDateTime(strDt);
+// 	public static void main(String[] args) {
+// 		String strDt = "12-11-2016 06:14:14 p.m";
+// 		//DateUtil.strToSQLDateTime(strDt);
 		
-		String mod = strDt.replace(".", "");
+// 		String mod = strDt.replace(".", "");
 		
-		System.out.println(mod);
+// 		System.out.println(mod);
 		
-		DateUtil.strToSQLDateTime(mod);
+// 		DateUtil.strToSQLDateTime(mod);
 
-	}
+// 	}
 
-}
+// }
