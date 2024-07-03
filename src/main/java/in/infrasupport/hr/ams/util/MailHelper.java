@@ -24,119 +24,119 @@ import in.infrasupport.hr.ams.model.User;
 @Component
 public class MailHelper {
 
-	// private static final Logger logger = LoggerFactory.getLogger(MailHelper.class);
+	private static final Logger logger = LoggerFactory.getLogger(MailHelper.class);
 
-	// @Autowired
-	// Environment environment;
+	@Autowired
+	Environment environment;
 	
-	// private Properties props;
-	// final String username = "infrasupportindia@gmail.com";
-	// final String password = "Infra$1234";	
+	private Properties props;
+	final String username = "infrasupportindia@gmail.com";
+	final String password = "Infra$1234";	
 	
-	// @PostConstruct
-	// public void init()
-	// {
-	// 	props = new Properties();
-	// 	props.put("mail.smtp.auth", "true");
-	// 	props.put("mail.smtp.starttls.enable", "true");
-	// 	props.put("mail.smtp.host", environment.getRequiredProperty("mail.smtp.host"));
-	// 	props.put("mail.smtp.port", environment.getRequiredProperty("mail.smtp.port"));
+	@PostConstruct
+	public void init()
+	{
+		props = new Properties();
+		props.put("mail.smtp.auth", "true");
+		props.put("mail.smtp.starttls.enable", "true");
+		props.put("mail.smtp.host", environment.getRequiredProperty("mail.smtp.host"));
+		props.put("mail.smtp.port", environment.getRequiredProperty("mail.smtp.port"));
 		
-	// }
+	}
 	
-	// public boolean sendBulkPasswordMail(List<User> userList, String subject, String messageBody) throws AMSException 
-	// {
+	public boolean sendBulkPasswordMail(List<User> userList, String subject, String messageBody) throws AMSException 
+	{
 
-	// 	int userListSize = userList.size();
-	// 	int count = 0;
+		int userListSize = userList.size();
+		int count = 0;
 		
-	// 	Session session = Session.getInstance(props,
-	// 	  new javax.mail.Authenticator() {
-	// 		protected PasswordAuthentication getPasswordAuthentication() {
-	// 			return new PasswordAuthentication(username, password);
-	// 		}
-	// 	  });
-	// 	Transport t = null;
-	// 	try {
-	// 			t = session.getTransport();
-	// 			t.connect();
-	// 			for(User user : userList)
-	// 			{
-	// 				try
-	// 				{
-	// 					Message message = new MimeMessage(session);
-	// 					message.setFrom(new InternetAddress("do-not-reply@infrasupport.in"));
-	// 					message.setRecipients(Message.RecipientType.TO,
-	// 						InternetAddress.parse(user.getEmail()));
-	// 					message.setSubject(subject);
-	// 					message.setText(messageBody + " " + user.getPlainTextPwd() + AMSConstants.MAIL_FOOTER);
-	// 					message.saveChanges();
-	// 					t.sendMessage(message, message.getAllRecipients());
-	// 					logger.info("Mail Sent Successfully to " + user.getEmpId());
-	// 					count++;
-	// 				}catch (Exception e) {
-	// 					logger.error("Error while sending Email to *** " + user.getEmail());
-	// 					logger.error(e.getLocalizedMessage());
-	// 				}
-	// 			}
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
+		Transport t = null;
+		try {
+				t = session.getTransport();
+				t.connect();
+				for(User user : userList)
+				{
+					try
+					{
+						Message message = new MimeMessage(session);
+						message.setFrom(new InternetAddress("do-not-reply@infrasupport.in"));
+						message.setRecipients(Message.RecipientType.TO,
+							InternetAddress.parse(user.getEmail()));
+						message.setSubject(subject);
+						message.setText(messageBody + " " + user.getPlainTextPwd() + AMSConstants.MAIL_FOOTER);
+						message.saveChanges();
+						t.sendMessage(message, message.getAllRecipients());
+						logger.info("Mail Sent Successfully to " + user.getEmpId());
+						count++;
+					}catch (Exception e) {
+						logger.error("Error while sending Email to *** " + user.getEmail());
+						logger.error(e.getLocalizedMessage());
+					}
+				}
 			
-	// 	} catch (MessagingException e) {
-	// 		logger.error("Error while sending email:"+e.getLocalizedMessage(), e);
-	// 		throw new AMSException("Error while sending email:"+e.getLocalizedMessage());
-	// 	}
-	// 	finally
-	// 	{
-	// 		if(t != null){
-	// 			try {
-	// 				t.close();
-	// 			} catch (MessagingException e) {
-	// 				logger.error("Error while closing Mail Transport:"+e.getLocalizedMessage(), e);
-	// 			}
-	// 		}
-	// 	}
-	// 	logger.info("Total Records to Send Email to -->" + userListSize);
-	// 	logger.info("Total Emails successfully sent-->" + count);
-	// 	return count == userListSize;
-	// }
+		} catch (MessagingException e) {
+			logger.error("Error while sending email:"+e.getLocalizedMessage(), e);
+			throw new AMSException("Error while sending email:"+e.getLocalizedMessage());
+		}
+		finally
+		{
+			if(t != null){
+				try {
+					t.close();
+				} catch (MessagingException e) {
+					logger.error("Error while closing Mail Transport:"+e.getLocalizedMessage(), e);
+				}
+			}
+		}
+		logger.info("Total Records to Send Email to -->" + userListSize);
+		logger.info("Total Emails successfully sent-->" + count);
+		return count == userListSize;
+	}
 	
 	
-	// public boolean sendMail(String toAddresses, String subject, String messageBody) throws AMSException 
-	// {
+	public boolean sendMail(String toAddresses, String subject, String messageBody) throws AMSException 
+	{
 
-	// 	boolean sent = false;
+		boolean sent = false;
 		
-	// 	Session session = Session.getInstance(props,
-	// 	  new javax.mail.Authenticator() {
-	// 		protected PasswordAuthentication getPasswordAuthentication() {
-	// 			return new PasswordAuthentication(username, password);
-	// 		}
-	// 	  });
+		Session session = Session.getInstance(props,
+		  new javax.mail.Authenticator() {
+			protected PasswordAuthentication getPasswordAuthentication() {
+				return new PasswordAuthentication(username, password);
+			}
+		  });
 
-	// 	try {
+		try {
 
-	// 		Message message = new MimeMessage(session);
-	// 		message.setFrom(new InternetAddress("do-not-reply@infrasupport.in"));
-	// 		message.setRecipients(Message.RecipientType.TO,
-	// 			InternetAddress.parse(toAddresses));
-	// 		message.setSubject(subject);
-	// 		message.setText(messageBody);
+			Message message = new MimeMessage(session);
+			message.setFrom(new InternetAddress("do-not-reply@infrasupport.in"));
+			message.setRecipients(Message.RecipientType.TO,
+				InternetAddress.parse(toAddresses));
+			message.setSubject(subject);
+			message.setText(messageBody);
 
-	// 		//Transport.send(message);
-	// 		Transport t = session.getTransport();
-	// 		t.connect();
-	// 		message.saveChanges();
-	// 		t.sendMessage(message, message.getAllRecipients());
-	// 		t.close();
+			//Transport.send(message);
+			Transport t = session.getTransport();
+			t.connect();
+			message.saveChanges();
+			t.sendMessage(message, message.getAllRecipients());
+			t.close();
 			
-	// 		logger.info("Mail Sent Successfully");
-	// 		sent = true;
-	// 	} catch (MessagingException e) {
-	// 		logger.error("Error while sending email:"+e.getLocalizedMessage(), e);
-	// 		throw new AMSException("Error while sending email:"+e.getLocalizedMessage());
-	// 	}
+			logger.info("Mail Sent Successfully");
+			sent = true;
+		} catch (MessagingException e) {
+			logger.error("Error while sending email:"+e.getLocalizedMessage(), e);
+			throw new AMSException("Error while sending email:"+e.getLocalizedMessage());
+		}
 		
-	// 	return sent;
-	// }	
+		return sent;
+	}	
 	
 	
 /*	
