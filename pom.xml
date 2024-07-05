@@ -17,8 +17,6 @@
 		<jackson.version>2.5.3</jackson.version>
 		<apachepoi.version>3.14</apachepoi.version>
 		<apachedbcp.version>2.1.1</apachedbcp.version>
-		<maven.compiler.target>1.8</maven.compiler.target>
-    		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>  
   
   <dependencies>
@@ -217,7 +215,7 @@
 				<plugin>
 			        <groupId>org.apache.maven.plugins</groupId>
 			        <artifactId>maven-compiler-plugin</artifactId>
-			        <version>3.2</version>
+			        <version>3.8.1</version>
 			        <configuration>
 			            <source>1.7</source>
 			            <target>1.7</target>
